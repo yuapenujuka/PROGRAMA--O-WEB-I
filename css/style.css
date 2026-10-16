@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 2rem 1rem;
-    background-color: #f1f5f9;
-    color: #1e293b;
+    background-color: #fbf3e8;
+    color: #34251f;
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
@@ -26,20 +26,89 @@ footer {
     box-shadow: 0 4px 12px rgb(15 23 42 / 8%);
 }
 
+header {
+    position: relative;
+    overflow: hidden;
+    color: #fff8ed;
+    background: linear-gradient(135deg, #8f3025, #c4512d);
+}
+
+header::after {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 0;
+    width: 140px;
+    height: 100%;
+    background:
+        linear-gradient(45deg, transparent 46%, rgb(255 248 237 / 28%) 47% 50%, transparent 51%),
+        linear-gradient(-45deg, transparent 46%, rgb(255 248 237 / 28%) 47% 50%, transparent 51%);
+    background-size: 28px 28px;
+    content: "";
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+header h1 {
+    color: #fff8ed;
+}
+
 nav,
 footer {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
-h1,
 h2 {
-    color: #1d4ed8;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #8f3025;
+}
+
+h2::before {
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 2px solid #c4512d;
+    content: "";
+    transform: rotate(45deg);
 }
 
 a {
-    color: #1d4ed8;
+    color: #8f3025;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #c4512d;
+}
+
+a:focus-visible {
+    outline: 3px solid #e2a23b;
+    outline-offset: 4px;
+}
+
+nav a[aria-current="page"] {
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.3rem;
+}
+
+section {
+    border-left: 4px solid #d67a43;
+}
+
+footer {
+    color: #fff8ed;
+    background-color: #5c3028;
+}
+
+footer a {
+    color: #ffe0a3;
+}
+
+footer a:hover {
+    color: #ffffff;
 }
 
 figure {
@@ -50,17 +119,19 @@ figure img {
     display: block;
     width: 100%;
     height: auto;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #dfb38a;
     border-radius: 8px;
 }
 
 .profile-photo {
     width: 180px;
+    border: 4px solid #f1c27d;
     border-radius: 50%;
+    box-shadow: 0 0 0 4px #8f3025;
 }
 
 figcaption {
     margin-top: 0.5rem;
-    color: #64748b;
+    color: #705b4e;
     font-size: 0.9rem;
 }
