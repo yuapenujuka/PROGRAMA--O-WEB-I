@@ -3,33 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Primeira Página Web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Minha Página Pessoal</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Minha Primeira Página Web</h1>
-        <p><strong>Nome:</strong> Yuapenu Juká Gastino de Paula</p>
+    <header id="inicio">
+        <h1>Yuapenu Juká Gastino de Paula</h1>
+        <p>
+            Graduado em Teatro pelo IFCE Fortaleza e Técnico em Informática para
+            Internet pelo IFSMG Barbacena. Arte-educador, pesquisador de poéticas
+            indígenas e afro-brasileiras, produtor cultural e audiovisual e
+            agente de cultura viva.
+        </p>
     </header>
 
+    <nav aria-label="Navegação principal">
+        <a href="index.html" aria-current="page">Início</a>
+        <a href="sobre.html">Sobre mim</a>
+        <a href="#interesses">Hobbies e interesses</a>
+    </nav>
+
     <main>
-        <section>
-            <h2>Sobre a Atividade</h2>
+        <section id="apresentacao">
+            <h2>Apresentação</h2>
             <p>
-                Esta é minha primeira página desenvolvida na disciplina
-                Programação Web.
+                Meu nome é Yuapenu Juká Gastino de Paula. Estou aprendendo
+                Programação Web e criando páginas com HTML.
             </p>
+            <figure>
+                <img
+                    class="profile-photo"
+                    src="Imagens/perfil.png"
+                    alt="Foto de perfil de Yuapenu Juká Gastino de Paula."
+                >
+                <figcaption>Yuapenu Juká Gastino de Paula</figcaption>
+            </figure>
         </section>
 
-        <section>
-            <h2>Tecnologias utilizadas</h2>
+        <section id="interesses">
+            <h2>Hobbies e interesses</h2>
             <ul>
-                <li>HTML</li>
-                <li>Git</li>
-                <li>GitHub</li>
+                <li>Estudar artes, programação e tecnologia</li>
+                <li>Criar páginas usando HTML</li>
+                <li>Aprender ferramentas como Git e GitHub</li>
             </ul>
         </section>
+    </main>
 
-    </main> 
+    <footer>
+        <p>Yuapenu Juká Gastino de Paula</p>
+        <a
+            href="https://mapacultural.secult.ce.gov.br/agente/88699/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >Meu perfil no Mapa Cultural</a>
+        <a href="#inicio">Voltar ao início</a>
+    </footer>
 </body>
 </html>

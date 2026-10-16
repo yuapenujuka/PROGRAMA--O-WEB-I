@@ -8,13 +8,17 @@ body {
 }
 
 header,
-main {
+main,
+nav,
+footer {
     max-width: 800px;
     margin: 0 auto;
 }
 
 header,
-section {
+section,
+nav,
+footer {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
     background-color: #ffffff;
@@ -22,8 +26,19 @@ section {
     box-shadow: 0 4px 12px rgb(15 23 42 / 8%);
 }
 
+nav,
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 h1,
 h2 {
+    color: #1d4ed8;
+}
+
+a {
     color: #1d4ed8;
 }
 
@@ -37,6 +52,11 @@ figure img {
     height: auto;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
+}
+
+.profile-photo {
+    width: 180px;
+    border-radius: 50%;
 }
 
 figcaption {
