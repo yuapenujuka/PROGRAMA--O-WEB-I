@@ -7,11 +7,13 @@ body {
     line-height: 1.6;
 }
 
-header,
-main,
-nav,
-footer {
-    max-width: 800px;
+.pagina {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
+    max-width: 1100px;
+    min-height: calc(100vh - 4rem);
     margin: 0 auto;
 }
 
@@ -19,7 +21,7 @@ header,
 section,
 nav,
 footer {
-    margin-bottom: 1.5rem;
+    margin: 0;
     padding: 1.5rem;
     background-color: #ffffff;
     border-radius: 12px;
@@ -52,8 +54,37 @@ header h1 {
     color: #fff8ed;
 }
 
-nav,
-footer {
+.cabecalho {
+    grid-column: 1 / 3;
+}
+
+.menu {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.conteudo {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+}
+
+.rodape {
+    grid-column: 1 / 3;
+}
+
+.rodape,
+.menu ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -98,17 +129,64 @@ section {
     border-left: 4px solid #d67a43;
 }
 
-footer {
+.rodape {
     color: #fff8ed;
     background-color: #5c3028;
 }
 
-footer a {
+.rodape a {
     color: #ffe0a3;
 }
 
-footer a:hover {
+.rodape a:hover {
     color: #ffffff;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.card {
+    margin: 0;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: #5c3028;
+}
+
+.icone {
+    flex: 0 0 auto;
+    font-size: 1.75rem;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: #f4e3d2;
+    color: #5c3028;
+    font-size: 0.85rem;
 }
 
 figure {
@@ -134,4 +212,90 @@ figcaption {
     margin-top: 0.5rem;
     color: #705b4e;
     font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+    .pagina {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        min-height: 0;
+    }
+
+    .cabecalho,
+    .menu,
+    .conteudo,
+    .rodape {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .menu ul {
+        flex-direction: row;
+    }
+
+    .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    body {
+        padding: 0;
+        background: #ffffff;
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+
+    .pagina {
+        display: block;
+        min-height: 0;
+    }
+
+    header,
+    main,
+    nav,
+    footer {
+        width: auto;
+        max-width: none;
+        margin: 0 0 8px;
+    }
+
+    header,
+    section,
+    nav,
+    footer {
+        margin-bottom: 10px;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: none;
+    }
+
+    section,
+    footer {
+        break-inside: avoid;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 15pt;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    ul {
+        margin-bottom: 0;
+    }
+
+    .profile-photo {
+        width: 100px;
+    }
 }
